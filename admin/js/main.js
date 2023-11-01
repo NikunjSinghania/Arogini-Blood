@@ -210,6 +210,12 @@
 
 })(jQuery);
 
+function cross() {
+    document.querySelector('#popup').style.display = 'none'
+
+    document.querySelector('.container-fluid').style.height = 'fit-content'
+    document.querySelector('.container-fluid').style.overflow = 'visible'
+}
 
 function fun(val) {
   console.log(val);
@@ -219,9 +225,10 @@ function fun(val) {
     data: { value : val },
 
     success: function (response){
+        console.log(response)
       let data =  JSON.parse(response)
 
-      let ht = ``
+      let ht = `<img src="img/cross.png" id="cross" onclick="cross()">`
       for (var variable in data) {
         if(variable == 'dt' || variable == 'Comments' || variable == 'id')
         continue;
@@ -230,6 +237,9 @@ function fun(val) {
           <p>${data[variable]}</p>
         </span>`
       }
+      document.querySelector('#popup').style.display = 'flex'
+        document.querySelector('.container-fluid').style.height = '100vh'
+        document.querySelector('.container-fluid').style.overflow = 'hidden'
       document.querySelector('#popup').innerHTML = ht
       }
 
