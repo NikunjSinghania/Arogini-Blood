@@ -1,7 +1,10 @@
 <?php
     include('Sidebar.php')
 ?>
-
+<script type="text/javascript">
+    let obj = [];
+    let val = []
+</script>
 
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
@@ -236,7 +239,7 @@
                           for($i=0;$i<$row['COUNT(*)']/3;$i++){
                         ?>
 
-                        <a href="http://localhost/shivang/user/admin/index.php?page=<?php echo $i; ?>"><?php echo $i+1 ?></a>
+                        <a href="http://localhost/user/admin/index.php?page=<?php echo $i; ?>"><?php echo $i+1 ?></a>
                         <?php } ?>
                     </div>
                 </div>
